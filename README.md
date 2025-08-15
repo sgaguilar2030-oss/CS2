@@ -33,6 +33,6 @@ Enter summative assessment grade: 95
 Final grade for Science: 89.00
 
 ## Contributors
-Ma. Lynger P. Labastilla - (Reviewing, testing, debugging)
+Ma. Lynger P. Labastilla - (Reviewing, testing, debugging, editing)
 
 Do you want to calculate another subject?
