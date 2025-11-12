@@ -4,11 +4,11 @@
   This advanced calculator is a python program that helps students calculate their final grade based on formative and summative test scores. It also includes other requirements for grades like attendance, participation, and oral recitations. This code applies basin programming concepts learned in the first quarter, including variables, conditionals, loops, and functions.
 
 ## Features
--Input students name and scores for formative and summative assessments
--Include inputs for attendance, participations, and oral recitation
--Supports multiple subjects
--Displays grades with two decimal places
--Compute and calculate the final average based of given percentages and scores.
+1. Input students name and scores for formative and summative assessments
+2. Include inputs for attendance, participations, and oral recitation
+3. Supports multiple subjects
+4. Displays grades with two decimal places
+5. Compute and calculate the final average based of given percentages and scores.
 
 ## How to run the code
 1. Make sure you have Python installed.
