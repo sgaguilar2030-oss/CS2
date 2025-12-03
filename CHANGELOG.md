@@ -6,3 +6,32 @@ This file displays all changes and updates that have been made to our Advanced G
 - User can:
   - Enter a student's name and grade
   - Calculate and display the final grade
+
+## Version v1.0.1 - November 21, 2025
+- Second version of the program
+- User can:
+  - Enter amount of subjects it will calculate
+  - Enter subject names
+  - Enter the amount, weight, and grade for each assessment (formative, alternative, midterms, finals)
+  - Ask to show the GWA table
+- Updates:
+  - User can not divide by 0
+  - Fixed bug where text is repeating 
+
+## Version v1.0.2 - December 2, 2025
+- Third version of the program
+- User can:
+  - Enter amount of subjects it will calculate
+  - Enter subject names
+  - Enter the amount, weight, and grade for each assessment (formative, alternative, midterms, finals)
+  - Ask to show the GWA table
+- Updates:
+  - Fixed bug where the code can't determine if the grade is pass or fail
+
+## Version v1.0.3 - December 3, 2025
+- Fourth and final version of the program.
+- User can: 
+  -
+- Updates:
+  -
+
