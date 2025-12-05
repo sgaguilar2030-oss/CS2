@@ -18,21 +18,46 @@
 5. Follow the instructions for name and score input
 
 ## Example Output
-Enter the amount of subjects you will be calculating: 2
+Reminder: Please use percentage form! This is very crucial to this program
+Enter the amount of subjects you will be calculating: 1
 
 Subject #1
-Enter subject name: Math
-Enter formative assessment grade: 85
-Enter summative assessment grade: 90
-Final grade for Math: 88.50
+Enter subject name: Mathematics 2
 
-Subject #2
-Enter subject name: Science
-Enter formative assessment grade: 80
-Enter summative assessment grade: 95
-Final grade for Science: 89.00
+Formative assessments
+Enter how many formative assessments you took: 1
+Enter the weight of the formative assessment to your final GWA: 25
+Enter grade for formative assessment #1: 100
 
-Do you want to calculate another subject?
+Alternative assessments
+Enter how many alternative assessments you took: 2
+Enter the weight of the alternative assessment to your final GWA: 45
+Enter grade for alternative assessment #1: 100
+Enter grade for alternative assessment #2: 95
+Did you take a midterm examination? (1 = yes, 2 = no): 2
+Did you take a final examination? (1 = yes, 2 = no): 1
+Enter the weight of the final exam to your final GWA: 30
+Enter your score in the final exam: 95
+
+Your GWA percentage for Mathematics 2 is: 97.38
+
+Show GWA table? (1 = yes, 2 = no): 1
+
+PISAY GWA TABLE
+Percentage      GWA            
+96-100          1.00           
+90-95           1.25           
+84-89           1.50           
+78-83           1.75           
+72-77           2.00           
+66-71           2.25           
+60-65           2.50           
+55-59           2.75           
+Below 55        3.00 or below  
+Remember that the GWA table may have inaccuracies, so don't rely on it heavily!
+
+Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
+Congratulations, you passed! ヾ•ω•`o 
 
 ## Contributors
 Student 1: Ma. Lynger P. Labastilla (Reviewing, testing, debugging, editing)
