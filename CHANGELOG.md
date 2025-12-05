@@ -1,7 +1,7 @@
 # CHANGELOG
 This file displays all changes and updates that have been made to our Advanced Grade Calculator project.
 ---
-## Version v1.0.0 – July 15, 2025
+## Version v1.0.0 - July 15, 2025
 - First version of the program.
 - User can:
   - Enter a student's name and grade
@@ -29,9 +29,15 @@ This file displays all changes and updates that have been made to our Advanced G
   - Fixed bug where the code can't determine if the grade is pass or fail
 
 ## Version v1.0.3 - December 3, 2025
-- Fourth and final version of the program.
+- Fourth version of the program.
 - User can: 
-  -
+  - Ask to see the GWA Table
 - Updates:
-  -
+  - Added GWA Table conversion
 
+## Version v.1.0.4 - December 4, 2025
+- Fifth and final version of the program.
+- User can:
+    - See if they failed / Passed
+- Updates:
+    - Edited accuracy of the GWA Table
