@@ -67,3 +67,5 @@ Would you like to loop? (1 = yes, 2 = no): 2
 
 Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
 
+
+
