@@ -72,7 +72,7 @@ The core features were implemented using separate functions for each major task.
 
 
 
--Technologies used (with justification)
+- Technologies used (with justification)
 
 The program was developed using Python 3 because it is simple, readable, and suitable for numerical calculations.
 
