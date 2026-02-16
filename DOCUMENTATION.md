@@ -54,14 +54,18 @@ No external libraries were introduced to maintain simplicity and compatibility.
 - Use of APA-style referencing for any sources used
   
 Philippine Science High School System. (n.d.). Institutional grading system reference.
-.
-.
-.
-.
-.
+
+
+
+
+
+
+
+
+
+
 DETAILED METHODOLOGY SECTION
 
-An added section in the documentation describing the GitHub repository
 - How core features were implemented
 
 The core features were implemented using separate functions for each major task. Input validation is handled by get_valid_number() and get_valid_grade() to ensure users enter correct values. The calculate_assessment() function computes weighted grades for formative and alternative assessments, while calculate_exam() computes the weighted contribution of exams. All computed values are combined in calculate_subject_gwa() to produce the final GWA percentage for each subject. The main loop allows users to calculate multipl subjects and optionally display the grading table.
