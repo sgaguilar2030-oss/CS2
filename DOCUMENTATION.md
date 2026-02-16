@@ -1,4 +1,4 @@
-##DOCUMENTATION
+DOCUMENTATION
 
 - Updated feature list (reflecting any additions or removals)
 
@@ -57,7 +57,7 @@ Philippine Science High School System. (n.d.). Institutional grading system refe
 
 
 
-##DETAILED METHODOLOGY SECTION
+DETAILED METHODOLOGY SECTION
 
 An added section in the documentation describing the GitHub repository
 - How core features were implemented
