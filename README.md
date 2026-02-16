@@ -23,10 +23,6 @@
 5. Follow the instructions for all inputs
 
 ## Example Output
-Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
-
-=============== RESTART: C:\Users\USER\OneDrive\Documents\test.py ==============
 Reminder: Please use percentage form! This is very crucial to this program1
 Enter the amount of subjects you will be calculating: 1
 
