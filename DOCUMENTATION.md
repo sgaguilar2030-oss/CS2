@@ -33,6 +33,7 @@ No features were removed from the original proposal.
 
 
 - Revised file/function structure
+  
 The project has one main file, gwa_calculator.py, where all the code is written, and a README.md file for documentation. The program is divided into simple functions to handle input checking, grade calculations, and final GWA computation. The main part of the program runs the loop for multiple subjects and displays the results.
 
 
@@ -51,12 +52,13 @@ No external libraries were introduced to maintain simplicity and compatibility.
 
 
 - Use of APA-style referencing for any sources used
+  
 Philippine Science High School System. (n.d.). Institutional grading system reference.
-
-
-
-
-
+.
+.
+.
+.
+.
 DETAILED METHODOLOGY SECTION
 
 An added section in the documentation describing the GitHub repository
@@ -67,6 +69,7 @@ The core features were implemented using separate functions for each major task.
 
 
 -Technologies used (with justification)
+
 The program was developed using Python 3 because it is simple, readable, and suitable for numerical calculations.
 
 Built-in Python features used include:
