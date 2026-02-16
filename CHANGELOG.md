@@ -36,8 +36,18 @@ This file displays all changes and updates that have been made to our Advanced G
   - Added GWA Table conversion
 
 ## Version v.1.0.4 - December 4, 2025
-- Fifth and final version of the program.
+- Fifth version of the program.
 - User can:
     - See if they failed / Passed
 - Updates:
     - Edited accuracy of the GWA Table
+## Version v.1.0.5 - January 29, 2026
+- Updates:
+  - Edited grammar
+
+## Version v.1.0.6 - February 16, 2026
+- Sixth and final version of the program.
+- User can:
+  - Loop the program
+- Updates:
+  - Added a feature that allows the user to loop the program when prompted.
