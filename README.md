@@ -13,6 +13,7 @@
 7. Display GWA percentage
 8. Display GWA table
 9. Indicates if you passed or failed
+10. Asks user whether they want to loop or not
 
 ## How to run the code
 1. Make sure you have Python installed.
@@ -22,56 +23,33 @@
 5. Follow the instructions for all inputs
 
 ## Example Output
-Reminder: Please use percentage form! This is very crucial to this program
-Enter the amount of subjects you will be calculating: 2
+Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+
+=============== RESTART: C:\Users\USER\OneDrive\Documents\test.py ==============
+Reminder: Please use percentage form! This is very crucial to this program1
+Enter the amount of subjects you will be calculating: 1
 
 Subject #1
-Enter subject name: Computer Science 2
+Enter subject name: Math
 
 Formative assessments
-Enter how many formative assessments you took: 2
+Enter how many formative assessments you took: 1
 Enter the weight of the formative assessment to your final GWA: 30
-Enter grade for formative assessment #1: 90
-Enter grade for formative assessment #2: 90
-
-Alternative assessments
-Enter how many alternative assessments you took: 1
-Enter the weight of the alternative assessment to your final GWA: 40
-Enter grade for alternative assessment #1: 90
-Did you take a midterm examination? (1 = yes, 2 = no): 1
-Enter the weight of the midterm exam to your final GWA: 15
-Enter your score in the midterm exam: 90
-Did you take a final examination? (1 = yes, 2 = no): 1
-Did you take a final examination? (1 = yes, 2 = no): 1
-Enter the weight of the final exam to your final GWA: 15
-Enter your score in the final exam: 90
-
-Your GWA percentage for Computer Science 2 is: 90.00
-
-Subject #2
-Enter subject name: Chemistry 1
-
-Formative assessments
-Enter how many formative assessments you took: 3
-Enter the weight of the formative assessment to your final GWA: 30
-Enter grade for formative assessment #1: 85
-Enter grade for formative assessment #2: 90
-Enter grade for formative assessment #3: 95
+Enter grade for formative assessment #1: 100
 
 Alternative assessments
 Enter how many alternative assessments you took: 2
-Enter the weight of the alternative assessment to your final GWA: 40
+Enter the weight of the alternative assessment to your final GWA: 25
 Enter grade for alternative assessment #1: 95
-Enter grade for alternative assessment #2: 90
-Did you take a midterm examination? (1 = yes, 2 = no): 1
-Enter the weight of the midterm exam to your final GWA: 15
-Enter your score in the midterm exam: 67
+Enter grade for alternative assessment #2: 100
+Did you take a midterm examination? (1 = yes, 2 = no): 2
 Did you take a final examination? (1 = yes, 2 = no): 1
 Did you take a final examination? (1 = yes, 2 = no): 1
-Enter the weight of the final exam to your final GWA: 15
-Enter your score in the final exam: 100
+Enter the weight of the final exam to your final GWA: 45
+Enter your score in the final exam: 91
 
-Your GWA percentage for Chemistry 1 is: 89.05
+Your GWA percentage for Math is: 95.33
 
 Show GWA table? (1 = yes, 2 = no): 1
 
@@ -88,12 +66,8 @@ Percentage      GWA
 55-59           2.75           
 Below 55        3.00 or below  
 ------------------------------
-Remember that the GWA table may have inaccuracies, so don't rely on it heavily!
+Remember that the GWA table may have inaccuracies.
+Would you like to loop? (1 = yes, 2 = no): 2
 
 Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
-Congratulations, you passed! ヾ•ω•`o 
 
-## Contributors
-Student 1: Ma. Lynger P. Labastilla (Reviewing, testing, debugging, editing)
-Student 2: Christine M. Galela (Editing, creating, testing)
-Student 3: Shawn Gillian M. Aguilar (Coding, calculating, debugging)
