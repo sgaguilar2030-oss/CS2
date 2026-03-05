@@ -1,33 +1,33 @@
-DOCUMENTATION
+## DOCUMENTATION
 
 - Updated feature list (reflecting any additions or removals)
 
-Core Features
+## Core Features
 Computes subject GWA percentage.
 Supports multiple subjects (1–15 subjects).
 
-Accepts:
-Formative assessments (maximum of 10)
-Alternative assessments (maximum of 7)
-Midterm examination
-Final examination
-Allows custom weight input for each assessment type.
+- Accepts:
+  - Formative assessments (maximum of 10)
+  - Alternative assessments (maximum of 7)
+  - Midterm examination
+  - Final examination
+  - Allows custom weight input for each assessment type.
 
-Validates user input for:
-Integer ranges
-Grade range (0–100)
-Displays formatted GWA table based on the institutional grading scale.
-Includes looping feature to recompute new GWA sets.
+- Validates user input for:
+  - Integer ranges
+  - Grade range (0–100)
+  - Displays formatted GWA table based on the institutional grading scale.
+  - Includes looping feature to recompute new GWA sets.
 
-Additions / Revisions:
-Implemented get_valid_number() for numeric validation.
-Implemented get_valid_grade() to prevent invalid grade entries.
-Modularized computation using separate functions.
-Added optional GWA table display.
-Added loop control for repeated usage.
+## Additions / Revisions:
+- Implemented get_valid_number() for numeric validation.
+- Implemented get_valid_grade() to prevent invalid grade entries.
+- Modularized computation using separate functions.
+- Added optional GWA table display.
+- Added loop control for repeated usage.
 
-Removed Features:
-No features were removed from the original proposal.
+## Removed Features:
+- No features were removed from the original proposal.
 
 
 
