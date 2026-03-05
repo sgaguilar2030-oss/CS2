@@ -24,18 +24,18 @@
 5. Follow the instructions for all inputs
 
 ## Example Output
-Reminder: Please use percentage form! This is very crucial to this program
-Enter the amount of subjects you will be calculating: 1
-
 User input
 Enter your full name: Christine M. Galela
 Enter your ID number: 13-2024-015
 
+Reminder: Please use percentage form! This is very crucial to this program
+Enter the amount of subjects you will be calculating: 1
+
 Check if user exists
 If user exists:
    Do you want to view your previous grades? (1 = yes, 2 = no)
+   
 if not:
-
 Subject #1
 Enter subject name: Math
 
@@ -74,6 +74,14 @@ Below 55        3.00 or below
 ------------------------------
 Remember that the GWA table may have inaccuracies.
 Would you like to loop? (1 = yes, 2 = no): 2
+
+Calculate your required score(s)
+if needed > 100:
+        print("Unfortunately, it's not possible to reach your desired grade.")
+    elif needed < 0:
+        print("You have already surpassed your desired grade!")
+    else:
+        print(f"You need {needed:.2f}% on the remaining assessments to reach your desired grade.")
 
 Display saved grades
 Do you want to view all saved grades? (1=yes, 2=no)
