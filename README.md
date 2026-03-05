@@ -76,12 +76,7 @@ Remember that the GWA table may have inaccuracies.
 Would you like to loop? (1 = yes, 2 = no): 2
 
 Calculate your required score(s)
-if needed > 100:
-        print("Unfortunately, it's not possible to reach your desired grade.")
-    elif needed < 0:
-        print("You have already surpassed your desired grade!")
-    else:
-        print(f"You need {needed:.2f}% on the remaining assessments to reach your desired grade.")
+if needed grade is > 100, print, "Unfortunately, it's not possible to reach your desired grade.". If needed grade is <0, print, "You have already surpassed your desired grade!". If else, print, f"You need {needed:.2f}% on the remaining assessments to reach your desired grade."
 
 Display saved grades
 Do you want to view all saved grades? (1=yes, 2=no)
