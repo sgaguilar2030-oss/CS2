@@ -46,8 +46,22 @@ This file displays all changes and updates that have been made to our Advanced G
   - Edited grammar
 
 ## Version v.1.0.6 - February 16, 2026
-- Sixth and most current version of the program.
+- Sixth version of the program.
 - User can:
   - Loop the program
 - Updates:
   - Added a feature that allows the user to loop the program when prompted.
+
+## Version v1.0.7 - February 26. 2026
+- Seventh version of the program.
+-Allows users to
+  - input a target or desired final grade.
+  - save and access grades from previous quarters.
+  - save grades and related information in a database.
+- Calculates the required percentage needed on upcoming, ungraded, or final exams.
+- Assists users in academic planning and goal setting.
+- Ensures data is retained even after exiting the program.
+- Displays grades, computations, and results in a table format.
+- Improves clarity, organization, and readability of outputs.
+
+
