@@ -14,6 +14,7 @@
 8. Display GWA table
 9. Indicates if you passed or failed
 10. Asks user whether they want to loop or not
+11. Allows users to save and access grades from past quarters
 
 ## How to run the code
 1. Make sure you have Python installed.
@@ -23,8 +24,17 @@
 5. Follow the instructions for all inputs
 
 ## Example Output
-Reminder: Please use percentage form! This is very crucial to this program1
+Reminder: Please use percentage form! This is very crucial to this program
 Enter the amount of subjects you will be calculating: 1
+
+User input
+Enter your full name: Christine M. Galela
+Enter your ID number: 13-2024-015
+
+Check if user exists
+If user exists:
+   Do you want to view your previous grades? (1 = yes, 2 = no)
+if not:
 
 Subject #1
 Enter subject name: Math
@@ -64,6 +74,9 @@ Below 55        3.00 or below
 ------------------------------
 Remember that the GWA table may have inaccuracies.
 Would you like to loop? (1 = yes, 2 = no): 2
+
+Display saved grades
+Do you want to view all saved grades? (1=yes, 2=no)
 
 Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
 
