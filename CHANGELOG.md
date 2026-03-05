@@ -54,14 +54,14 @@ This file displays all changes and updates that have been made to our Advanced G
 
 ## Version v1.0.7 - February 26. 2026
 - Seventh version of the program.
-- Allows users to
+- Allows users to:
   - Input a target or desired final grade.
   - Save and access grades from previous quarters.
   - Save grades and related information in a database.
-- Calculates the required percentage needed on upcoming, ungraded, or final exams.
-- Assists users in academic planning and goal setting.
-- Ensures data is retained even after exiting the program.
-- Displays grades, computations, and results in a table format.
-- Improves clarity, organization, and readability of outputs.
+- Updates:
+  - Calculates the required percentage needed on upcoming, ungraded, or final exams.
+  - Ensures data is retained even after exiting the program.
+  - Displays grades, computations, and results in a table format.
+  - Improves clarity, organization, and readability of outputs.
 
 
