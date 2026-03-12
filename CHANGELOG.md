@@ -64,4 +64,10 @@ This file displays all changes and updates that have been made to our Advanced G
   - Displays grades, computations, and results in a table format.
   - Improves clarity, organization, and readability of outputs.
 
-
+## Version v.1.0.8 - March 12, 2026
+- Eighth version of the program.
+- Allows the user to:
+  - Input bonus points (if applicable)
+  - Asks the user if they take long tests, midterms, or practical exams
+- User can:
+  - Input grade level and section
