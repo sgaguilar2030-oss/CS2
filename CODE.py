@@ -66,38 +66,6 @@ def calculate_assessment(assessment_name, max_count):
 
     return contribution, weight
 
-
-def calculate_multiple_tests(test_name, max_count):
-    print(f"\n{test_name} assessments")
-
-    took_test = get_valid_number(
-        f"Did you take any {test_name.lower()}? (1 = yes, 2 = no): ", 1, 2
-    )
-
-    if took_test == 2:
-        return 0, 0
-
-    count = get_valid_number(
-        f"How many {test_name.lower()} did you take?: ", 1, max_count
-    )
-
-    weight = get_valid_number(
-        f"Enter total weight of {test_name.lower()} (%): ", 0, 100
-    )
-
-    total = 0
-    for i in range(count):
-        grade = get_valid_grade(
-            f"Enter score for {test_name.lower()} #{i + 1}: "
-        )
-        total += grade
-
-    average = total / count
-    contribution = average * (weight / 100)
-
-    return contribution, weight
-
-
 def calculate_exam(exam_name):
     take_exam = get_valid_number(
         f"Did you take a {exam_name} exam? (1 = yes, 2 = no): ", 1, 2
@@ -109,7 +77,7 @@ def calculate_exam(exam_name):
         )
 
         score = get_valid_grade(
-            f"Enter your score in the {exam_name} exam (%): "
+            f"Enter your score in the {exam_name} exam: "
         )
 
         contribution = score * (weight / 100)
@@ -118,12 +86,10 @@ def calculate_exam(exam_name):
 
     return 0, 0
 
-
 # -----------------------------
 # Subject Calculation
 # -----------------------------
 def calculate_subject_gwa(subject_name):
-
     print(f"\n--- Calculating {subject_name} ---")
 
     total_contribution = 0
@@ -137,14 +103,6 @@ def calculate_subject_gwa(subject_name):
     total_contribution += aa_contrib
     total_weight += aa_weight
 
-    lt_contrib, lt_weight = calculate_multiple_tests("Long Test", 10)
-    total_contribution += lt_contrib
-    total_weight += lt_weight
-
-    pr_contrib, pr_weight = calculate_multiple_tests("Practical Exam", 10)
-    total_contribution += pr_contrib
-    total_weight += pr_weight
-
     midterm_contrib, midterm_weight = calculate_exam("Midterm")
     total_contribution += midterm_contrib
     total_weight += midterm_weight
@@ -156,6 +114,9 @@ def calculate_subject_gwa(subject_name):
     bonus = float(input("Enter bonus points for this subject (0 if none): "))
     total_contribution += bonus
 
+    if total_weight > 100:
+        print("\nWARNING: Total weights exceed 100%! Adjusting final GWA accordingly.")
+
     gwa = total_contribution
 
     print(f"\nYour GWA percentage for {subject_name} is: {gwa:.2f}%")
@@ -163,19 +124,56 @@ def calculate_subject_gwa(subject_name):
 
     return gwa
 
+# -----------------------------
+# GWA Table
+# -----------------------------
+def show_gwa_table():
+    GWA = [
+        ["96-100", "1.00"],
+        ["90-95", "1.25"],
+        ["84-89", "1.50"],
+        ["78-83", "1.75"],
+        ["72-77", "2.00"],
+        ["66-71", "2.25"],
+        ["60-65", "2.50"],
+        ["55-59", "2.75"],
+        ["Below 55", "3.00 or below"],
+    ]
+
+    print("\n===== PISAY GWA TABLE =====")
+    print("{:<15} {:<15}".format("Percentage", "GWA"))
+    print("-" * 30)
+
+    for row in GWA:
+        print("{:<15} {:<15}".format(row[0], row[1]))
+
+    print("-" * 30)
+
+# -----------------------------
+# Desired Grade Calculator
+# -----------------------------
+def calculate_required_score(current_grade, desired_grade, weight_remaining):
+
+    if weight_remaining <= 0:
+        print("No remaining weight to compute.")
+        return
+
+    needed = (desired_grade - current_grade) / (weight_remaining / 100)
+
+    if needed > 100:
+        print("Unfortunately, it's not possible to reach your desired grade.")
+    elif needed < 0:
+        print("You have already surpassed your desired grade!")
+    else:
+        print(f"You need {needed:.2f}% on the remaining assessments to reach your desired grade.")
 
 # -----------------------------
 # Save Grades
 # -----------------------------
-def save_grade_json(user_id, user_name, grade_level, section, quarter, subjects, overall_gwa):
+def save_grade_json(user_id, user_name, quarter, subjects, overall_gwa):
 
     if user_id not in data:
-        data[user_id] = {
-            "name": user_name,
-            "grade_level": grade_level,
-            "section": section,
-            "quarters": {}
-        }
+        data[user_id] = {"name": user_name, "quarters": {}}
 
     data[user_id]["quarters"][quarter] = {
         "subjects": subjects,
@@ -187,9 +185,56 @@ def save_grade_json(user_id, user_name, grade_level, section, quarter, subjects,
 
     print(f"\nGrades saved for {user_name} ({user_id}) in {quarter}.")
 
+# -----------------------------
+# Show Saved Grades
+# -----------------------------
+def show_saved_grades_json():
+
+    if not data:
+        print("No grades saved yet.")
+        return
+
+    print("\n===== SAVED GRADES =====")
+
+    for user_id, user_data in data.items():
+        print(f"\nUser: {user_data['name']} (ID: {user_id})")
+
+        for quarter, details in user_data["quarters"].items():
+
+            print(f" Quarter: {quarter}")
+
+            for subj in details["subjects"]:
+                print(f"  - {subj['name']}: {subj['gwa']:.2f}%")
+
+            print(f" Overall GWA: {details['overall_gwa']:.2f}%")
 
 # -----------------------------
-# Main Program
+# Search User
+# -----------------------------
+def search_user():
+
+    user_id = input("Enter user ID to search: ")
+
+    if user_id in data:
+
+        user_data = data[user_id]
+
+        print(f"Found user: {user_data['name']} (ID: {user_id})")
+
+        for quarter, details in user_data["quarters"].items():
+
+            print(f" Quarter: {quarter}")
+
+            for subj in details["subjects"]:
+                print(f"  - {subj['name']}: {subj['gwa']:.2f}%")
+
+            print(f" Overall GWA: {details['overall_gwa']:.2f}%")
+
+    else:
+        print("User not found.")
+
+# -----------------------------
+# Main Program Loop
 # -----------------------------
 print("Reminder: Please enter grades in percentage form (0-100).")
 
@@ -200,12 +245,19 @@ while True:
     user_name = input("Enter your full name: ")
     user_id = input("Enter your ID: ")
 
-    grade_level = input("Enter your grade level: ")
-    section = input("Enter your section: ")
+    if user_id in data:
+        print(f"Welcome back, {user_name}!")
 
-    num_sub = get_valid_number(
-        "Enter number of subjects: ", 1, 15
-    )
+        search_choice = get_valid_number(
+            "Do you want to view your previous grades? (1 = yes, 2 = no): ",
+            1,
+            2
+        )
+
+        if search_choice == 1:
+            search_user()
+
+    num_sub = get_valid_number("Enter number of subjects: ", 1, 15)
 
     subjects = []
 
@@ -213,40 +265,64 @@ while True:
 
         print(f"\nSubject #{i+1}")
 
-        subject_name = input(
-            "Enter subject name: "
-        )
+        subject_name = input("Enter subject name: ")
 
-        gwa = calculate_subject_gwa(
-            subject_name
-        )
+        gwa = calculate_subject_gwa(subject_name)
 
         subjects.append({
             "name": subject_name,
             "gwa": gwa
         })
 
-    overall_gwa = sum(
-        subj['gwa'] for subj in subjects
-    ) / len(subjects)
+    overall_gwa = sum(subj['gwa'] for subj in subjects) / len(subjects)
 
-    print(
-        f"\nYour overall GWA for this quarter: {overall_gwa:.2f}%"
-    )
+    print(f"\nYour overall GWA for this quarter: {overall_gwa:.2f}%")
 
-    quarter = input(
-        "Enter quarter (Q1, Q2, Q3, Q4): "
-    )
+    quarter = input("Enter quarter (e.g., Q1, Q2, Q3, Q4): ")
 
     save_grade_json(
         user_id,
         user_name,
-        grade_level,
-        section,
         quarter,
         subjects,
         overall_gwa
     )
+
+    show_table = get_valid_number(
+        "Show GWA table? (1 = yes, 2 = no): ",
+        1,
+        2
+    )
+
+    if show_table == 1:
+        show_gwa_table()
+
+    check_desired = get_valid_number(
+        "Do you want to calculate required score for desired grade? (1 = yes, 2 = no): ",
+        1,
+        2
+    )
+
+    if check_desired == 1:
+
+        current_grade = float(input("Enter your current grade: "))
+        desired_grade = float(input("Enter your desired final grade: "))
+        weight_remaining = float(input("Enter remaining weight (%): "))
+
+        calculate_required_score(
+            current_grade,
+            desired_grade,
+            weight_remaining
+        )
+
+    show_saved = get_valid_number(
+        "Do you want to view all saved grades? (1 = yes, 2 = no): ",
+        1,
+        2
+    )
+
+    if show_saved == 1:
+        show_saved_grades_json()
 
     loop_choice = get_valid_number(
         "Do you want to calculate again? (1 = yes, 2 = no): ",
@@ -255,5 +331,5 @@ while True:
     )
 
     if loop_choice == 2:
-        print("\nThank you for using the GWA calculator!")
+        print("\nThank you for using the GWA calculator! (｡･∀･)ﾉﾞ")
         break
