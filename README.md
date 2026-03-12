@@ -6,57 +6,75 @@
 ## Features
 1. Input amount of subjects to calculate
 2. Input name for the first subject
-3. Input the weight and grades of the formative and alternative assessments (in percentage)
-4. Enter the weight and grades for midterm and final examination (if any)
-5. Repeat for all other subjects
-6. Compute and calculate the GWA based of given percentages and scores
-7. Display GWA percentage
-8. Display GWA table
-9. Indicates if you passed or failed
-10. Asks user whether they want to loop or not
-11. Allows users to save and access grades from past quarters
+3. Input grade and section
+4. Input ID
+5. Input the weight and grades of the formative and alternative assessments (in percentage)
+6. Enter the weight and grades for midterm and final examination (if any)
+7. Repeat for all other subjects
+8. Compute and calculate the GWA based of given percentages and scores
+9. Display GWA percentage
+10. Display GWA table
+11. Indicates if you passed or failed
+12. Asks user whether they want to loop or not
+13. Allows users to save and access grades from past quarters
 
 ## How to run the code
 1. Make sure you have Python installed.
-2. Download the 'advanced_grade_calculator.py' file
+2. Download the 'CODE.py' file
 3. Open a terminal or command prompt.
 4. Run the program by pressing F5 or clicking 'Run' 
 5. Follow the instructions for all inputs
 
+## Alternative way to run the code
+1. Make sure you have internet or data
+2. Open onlinegdb.com
+3. Click language and select 'Python 3'
+4. Copy and paste the code from the file 'CODE.py'
+5. Click run
+6. Follow the instructions for all inputs
+
 ## Example Output
-User input
-Enter your full name: Christine M. Galela
-Enter your ID number: 13-2024-015
+Reminder: Please enter grades in percentage form (0-100).
 
-Reminder: Please use percentage form! This is very crucial to this program
-Enter the amount of subjects you will be calculating: 1
+===== GWA CALCULATOR =====
+Enter your full name: Diane Dela Cruz
+Enter your ID: 12-2016-048
+Enter your grade level: 10
+Enter your section: Archimedes
+Enter number of subjects: 1
 
-Check if user exists
-If user exists:
-   Do you want to view your previous grades? (1 = yes, 2 = no)
-   
-if not:
 Subject #1
-Enter subject name: Math
+Enter subject name: Mathematics
+
+--- Calculating Mathematics ---
 
 Formative assessments
 Enter how many formative assessments you took: 1
-Enter the weight of the formative assessment to your final GWA: 30
-Enter grade for formative assessment #1: 100
+Enter total weight of formative assessments to your final GWA (%): 25
+Enter grade for formative assessment #1: 97.3333
 
 Alternative assessments
-Enter how many alternative assessments you took: 2
-Enter the weight of the alternative assessment to your final GWA: 25
-Enter grade for alternative assessment #1: 95
-Enter grade for alternative assessment #2: 100
-Did you take a midterm examination? (1 = yes, 2 = no): 2
-Did you take a final examination? (1 = yes, 2 = no): 1
-Did you take a final examination? (1 = yes, 2 = no): 1
-Enter the weight of the final exam to your final GWA: 45
-Enter your score in the final exam: 91
+Enter how many alternative assessments you took: 1
+Enter total weight of alternative assessments to your final GWA (%): 35
+Enter grade for alternative assessment #1: 89
+Did you take any Long Test? (1 = yes, 2 = no): 2
+Did you take any Practical Exam? (1 = yes, 2 = no): 2
+Did you take any Midterm? (1 = yes, 2 = no): 1
+How many Midterm did you take?: 1
+Enter total weight of Midterm (%): 20
+Enter score for Midterm #1: 91
+Did you take a Final exam? (1 = yes, 2 = no): 1
+Enter weight of Final exam (%): 20
+Enter your score in the Final exam: 89
+Enter bonus points for this subject (0 if none): 0
 
-Your GWA percentage for Math is: 95.33
+Your GWA percentage for Mathematics is: 91.48%
+Status: PASSED ✅
 
+Your overall GWA for this quarter: 91.48%
+Enter quarter (e.g., Q1, Q2, Q3, Q4): Q4
+
+Grades saved for Diane Dela Cruz (12-2016-048) in Q4.
 Show GWA table? (1 = yes, 2 = no): 1
 
 ===== PISAY GWA TABLE =====
@@ -72,16 +90,26 @@ Percentage      GWA
 55-59           2.75           
 Below 55        3.00 or below  
 ------------------------------
-Remember that the GWA table may have inaccuracies.
-Would you like to loop? (1 = yes, 2 = no): 2
+Do you want to calculate required score for desired grade? (1 = yes, 2 = no): 2
+Do you want to view all saved grades? (1 = yes, 2 = no): 1
 
-Calculate your required score(s)
-if needed grade is > 100, print, "Unfortunately, it's not possible to reach your desired grade.". If needed grade is <0, print, "You have already surpassed your desired grade!". If else, print, f"You need {needed:.2f}% on the remaining assessments to reach your desired grade."
+===== SAVED GRADES =====
 
-Display saved grades
-Do you want to view all saved grades? (1=yes, 2=no)
+User: 1 (ID: 1)
+Grade Level: 1, Section: 1
+ Quarter: 
+  - 1: 1.06%
+ Overall GWA: 1.06%
+
+User: Diane Dela Cruz (ID: 12-2016-048)
+Grade Level: 10, Section: Archimedes
+ Quarter: Q4
+  - Mathematics: 91.48%
+ Overall GWA: 91.48%
+Do you want to calculate again? (1 = yes, 2 = no): 2
 
 Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
+
 
 
 
