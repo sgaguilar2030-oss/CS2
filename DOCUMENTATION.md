@@ -36,12 +36,18 @@ Supports multiple subjects (1–15 subjects).
 - The project has one main file, gwa_calculator.py, where all the code is written, and a README.md file for documentation. The program is divided into simple functions to handle input checking, grade calculations, and final GWA computation. The main part of the program runs the loop for multiple subjects and displays the results.
 
 ## New Technologies / Tools Introduced
-- Python 3 – Main programming language
+MAIN PROGRAMMING LANGUAGE(s) = Python and JSON
 
 - Built-in Python features:
   - try and except for error handling
   - while loops for repeated input validation
   - Lists for storing subject GWAs and grading table data
+
+- Built-in JSON features
+  - Key-value pairs for organizing data
+  - objects {} for grouping related information
+  - arrays {} for storing multiple values
+  
 
 - No external libraries were introduced to maintain simplicity and compatibility.
 
