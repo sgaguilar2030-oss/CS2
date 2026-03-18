@@ -76,8 +76,6 @@ MAIN PROGRAMMING LANGUAGE(s) = Python and JSON
     - While loops for repeated input
     - Lists for storing results
 
-- No external libraries were used to keep the program simple and easy to run.
-
 
 
 ## Key design decisions or trade-offs
