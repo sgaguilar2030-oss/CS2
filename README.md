@@ -38,43 +38,43 @@ Reminder: Please enter grades in percentage form (0-100).
 
 ===== GWA CALCULATOR =====
 Enter your full name: Diane Dela Cruz
-Enter your ID: 12-2016-048
+Enter your ID: 12-2016-48
 Enter your grade level: 10
 Enter your section: Archimedes
 Enter number of subjects: 1
 
 Subject #1
-Enter subject name: Mathematics
+Enter subject name: Math
 
---- Calculating Mathematics ---
+--- Calculating Math ---
 
 Formative assessments
 Enter how many formative assessments you took: 1
 Enter total weight of formative assessments to your final GWA (%): 25
-Enter grade for formative assessment #1: 97.3333
+Enter grade for formative assessment #1: 100
 
 Alternative assessments
 Enter how many alternative assessments you took: 1
-Enter total weight of alternative assessments to your final GWA (%): 35
-Enter grade for alternative assessment #1: 89
+Enter total weight of alternative assessments to your final GWA (%): 25
+Enter grade for alternative assessment #1: 100
 Did you take any Long Test? (1 = yes, 2 = no): 2
 Did you take any Practical Exam? (1 = yes, 2 = no): 2
 Did you take any Midterm? (1 = yes, 2 = no): 1
 How many Midterm did you take?: 1
-Enter total weight of Midterm (%): 20
-Enter score for Midterm #1: 91
+Enter total weight of Midterm (%): 25
+Enter score for Midterm #1: 96
 Did you take a Final exam? (1 = yes, 2 = no): 1
-Enter weight of Final exam (%): 20
-Enter your score in the Final exam: 89
+Enter weight of Final exam (%): 25
+Enter your score in the Final exam: 92
 Enter bonus points for this subject (0 if none): 0
 
-Your GWA percentage for Mathematics is: 91.48%
+Your GWA percentage for Math is: 97.00%
 Status: PASSED ✅
 
-Your overall GWA for this quarter: 91.48%
+Your overall GWA for this quarter: 97.00%
 Enter quarter (e.g., Q1, Q2, Q3, Q4): Q4
 
-Grades saved for Diane Dela Cruz (12-2016-048) in Q4.
+Grades saved for Diane Dela Cruz (12-2016-48) in Q4.
 Show GWA table? (1 = yes, 2 = no): 1
 
 ===== PISAY GWA TABLE =====
@@ -95,21 +95,24 @@ Do you want to view all saved grades? (1 = yes, 2 = no): 1
 
 ===== SAVED GRADES =====
 
+User: a (ID: a)
+Grade Level: a, Section: a
+ Quarter: Q1
+  - 1: 0.06%
+ Overall GWA: 0.06%
+
 User: 1 (ID: 1)
 Grade Level: 1, Section: 1
- Quarter: 
-  - 1: 1.06%
+ Quarter: 1
+  - : 1.06%
  Overall GWA: 1.06%
 
-User: Diane Dela Cruz (ID: 12-2016-048)
+User: Diane Dela Cruz (ID: 12-2016-48)
 Grade Level: 10, Section: Archimedes
  Quarter: Q4
-  - Mathematics: 91.48%
- Overall GWA: 91.48%
+  - Math: 97.00%
+ Overall GWA: 97.00%
 Do you want to calculate again? (1 = yes, 2 = no): 2
 
 Thank you for using the GWA calculator! (｡･∀･)ﾉﾞ
-
-
-
 
