@@ -1,5 +1,5 @@
 ## DOCUMENTATION
-
+---
 - Updated feature list (reflecting any additions or removals)
 
 ## Core Features
