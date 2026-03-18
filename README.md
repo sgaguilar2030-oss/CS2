@@ -95,18 +95,6 @@ Do you want to view all saved grades? (1 = yes, 2 = no): 1
 
 ===== SAVED GRADES =====
 
-User: a (ID: a)
-Grade Level: a, Section: a
- Quarter: Q1
-  - 1: 0.06%
- Overall GWA: 0.06%
-
-User: 1 (ID: 1)
-Grade Level: 1, Section: 1
- Quarter: 1
-  - : 1.06%
- Overall GWA: 1.06%
-
 User: Diane Dela Cruz (ID: 12-2016-48)
 Grade Level: 10, Section: Archimedes
  Quarter: Q4
