@@ -71,3 +71,12 @@ This file displays all changes and updates that have been made to our Advanced G
   - Asks the user if they take long tests, midterms, or practical exams
 - User can:
   - Input grade level and section
+
+## Version v.1.0.9 - March 18, 2026
+- Ninth version of the program.
+- Enabled code to calculate the current quarter grade using 1/3 of the previous quarter grade and 2/3 of the current quarter tentative grade to accomodate the PSHS grading system.
+
+## Version v.1.1.0 - March 19, 2026
+- Tenth version of the program.
+- fixed a bug, program now takes float values for direct conversion
+- fixed a bug, program now warns user if GWA exceeds 100%
