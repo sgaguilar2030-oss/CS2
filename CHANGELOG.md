@@ -79,4 +79,8 @@ This file displays all changes and updates that have been made to our Advanced G
 ## Version v.1.1.0 - March 19, 2026
 - Tenth version of the program.
 - fixed a bug, program now takes float values for direct conversion
-- fixed a bug, program now warns user if GWA exceeds 100%
+
+## Version v.1.1.1 - March 25, 2026
+- Eleventh version of the program
+- Added a feature wwhere if GWA > 100%, it caps to 100%
+- fixed a bug, function now takes one positional argument instead of 0
