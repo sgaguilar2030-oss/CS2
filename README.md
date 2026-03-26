@@ -1,7 +1,7 @@
 # Advanced Grade Calculator suited for Pisay Scholars
 
  ## Project Description
-  This advanced calculator is a python program that helps students calculate their final grade based on formative and summative test scores. It also includes showing the GWA table and indicate if you passed or failed. This code applies basin programming concepts learned in the first quarter, including variables, conditionals, loops, and functions, and concepts in the second quarter like functions and libraries.
+  This advanced calculator is a python program that helps students and teachers calculate grades based on formative and alternative assessments. It also includes showing the GWA table and indicate if you passed or failed. This code applies basic programming concepts learned in the first quarter, including variables, conditionals, loops, functions, and concepts in the second quarter like functions and libraries, while also including databases we learned from the third quarter.
 
 ## Features
 1. Input amount of subjects to calculate
