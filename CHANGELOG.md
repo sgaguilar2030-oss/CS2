@@ -78,9 +78,23 @@ This file displays all changes and updates that have been made to our Advanced G
 
 ## Version v.1.1.0 - March 19, 2026
 - Tenth version of the program.
-- fixed a bug, program now takes float values for direct conversion
+- Fixed a bug, program now takes float values for direct conversion
 
 ## Version v.1.1.1 - March 25, 2026
 - Eleventh version of the program
 - Added a feature wwhere if GWA > 100%, it caps to 100%
-- fixed a bug, function now takes one positional argument instead of 0
+- Fixed a bug, function now takes one positional argument instead of 0
+
+## Version v.1.1.2 - April 13, 2026
+- Twelfth version of the program
+- Fixed a bug, JSON loading crash: added try-except to handle JSONDecodeError when grades.json is empty or corrupted.
+- Fixed a bug, Normalized GWA using: gwa = (total_contribution / total_weight) * 100.
+- Fixed a bug, Added check for "quarters" key before accessing it.
+
+## Version v.1.1.3 - April 14, 2026
+- Thirteenth version of the program
+- Fixed a bug, Used .items() when looping through quarters to correctly access key-value pairs.
+- Updates:
+  - Added feature, Bonus cap system: limited bonus points by 5.
+  - Added feature, User identity mismatch warning that prevents silent overwriting of user identity.
+- Added note, Clarification for grade calculator: Enter your CURRENT WEIGHTED grade.
