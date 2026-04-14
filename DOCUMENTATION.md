@@ -63,7 +63,7 @@ MAIN PROGRAMMING LANGUAGE(s) = Python and JSON
 
 - How core features were implemented
 
-  -The core features were implemented using separate functions for each major task. Input validation is handled by get_valid_number() and get_valid_grade() to ensure users enter correct values. The calculate_assessment() function computes weighted grades for formative and alternative assessments, while calculate_exam() computes the weighted contribution of exams. All computed values are combined in calculate_subject_gwa() to produce the final GWA percentage for each subject. The main loop allows users to calculate multiple subjects and optionally display the grading table.
+  - The core features were implemented using separate functions for each major task. Input validation is handled by get_valid_number() and get_valid_grade() to ensure users enter correct values. The calculate_assessment() function computes weighted grades for formative and alternative assessments, while calculate_exam() computes the weighted contribution of exams. All computed values are combined in calculate_subject_gwa() to produce the final GWA percentage for each subject. The main loop allows users to calculate multiple subjects and optionally display the grading table.
 
 
 
