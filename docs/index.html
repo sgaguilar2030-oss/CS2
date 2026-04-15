@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GWA Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background: #4CAF50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #45a049;
+    }
+    .result {
+        margin-top: 15px;
+        padding: 10px;
+        background: #eef;
+        border-radius: 6px;
+    }
+</style>
+</head>
 
+<body>
+<div class="container">
+    <h1>GWA Calculator</h1>
+
+    <label>Subject Name</label>
+    <input type="text" id="subject">
+
+    <label>Formative Average</label>
+    <input type="number" id="fa">
+
+    <label>Formative Weight (%)</label>
+    <input type="number" id="fa_w">
+
+    <label>Alternative Average</label>
+    <input type="number" id="aa">
+
+    <label>Alternative Weight (%)</label>
+    <input type="number" id="aa_w">
+
+    <label>Long Test Average</label>
+    <input type="number" id="lt">
+
+    <label>Long Test Weight (%)</label>
+    <input type="number" id="lt_w">
+
+    <label>Final Exam Score</label>
+    <input type="number" id="final">
+
+    <label>Final Weight (%)</label>
+    <input type="number" id="final_w">
+
+    <button onclick="calculate()">Calculate GWA</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<script>
+function calculate() {
+    let fa = Number(document.getElementById("fa").value) || 0;
+    let fa_w = Number(document.getElementById("fa_w").value) || 0;
+
+    let aa = Number(document.getElementById("aa").value) || 0;
+    let aa_w = Number(document.getElementById("aa_w").value) || 0;
+
+    let lt = Number(document.getElementById("lt").value) || 0;
+    let lt_w = Number(document.getElementById("lt_w").value) || 0;
+
+    let final = Number(document.getElementById("final").value) || 0;
+    let final_w = Number(document.getElementById("final_w").value) || 0;
+
+    let total_weight = fa_w + aa_w + lt_w + final_w;
+
+    if (total_weight === 0) {
+        document.getElementById("output").innerHTML = "Please enter weights.";
+        return;
+    }
+
+    let gwa =
+        (fa * (fa_w / 100)) +
+        (aa * (aa_w / 100)) +
+        (lt * (lt_w / 100)) +
+        (final * (final_w / 100));
+
+    let status = gwa >= 60 ? "PASSED ✅" : "FAILED ❌";
+
+    document.getElementById("output").innerHTML =
+        "GWA: " + gwa.toFixed(2) + "%<br>Status: " + status;
+}
+</script>
+
+</body>
+</html>
