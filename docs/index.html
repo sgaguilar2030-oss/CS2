@@ -2,106 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GWA Calculator</title>
+<title>Advanced GWA Calculator</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        margin: 0;
-        padding: 20px;
-    }
-    .container {
-        max-width: 700px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-        text-align: center;
-    }
-    input, button {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-    }
-    button {
-        background: #4CAF50;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #45a049;
-    }
-    .result {
-        margin-top: 15px;
-        padding: 10px;
-        background: #eef;
-        border-radius: 6px;
-    }
+body {
+    font-family: Arial;
+    background: #f4f7fb;
+    padding: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+}
+.subject {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover {
+    background: #45a049;
+}
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #eef;
+    border-radius: 6px;
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
-    <h1>GWA Calculator</h1>
+<h1>Advanced GWA Calculator</h1>
 
-    <label>Subject Name</label>
-    <input type="text" id="subject">
+<label>Name</label>
+<input id="name">
 
-    <label>Formative Average</label>
-    <input type="number" id="fa">
+<label>ID</label>
+<input id="id">
 
-    <label>Formative Weight (%)</label>
-    <input type="number" id="fa_w">
+<label>Quarter (Q1, Q2...)</label>
+<input id="quarter">
 
-    <label>Alternative Average</label>
-    <input type="number" id="aa">
+<div id="subjects"></div>
 
-    <label>Alternative Weight (%)</label>
-    <input type="number" id="aa_w">
+<button onclick="addSubject()">+ Add Subject</button>
+<button onclick="calculateAll()">Calculate Overall GWA</button>
 
-    <label>Long Test Average</label>
-    <input type="number" id="lt">
-
-    <label>Long Test Weight (%)</label>
-    <input type="number" id="lt_w">
-
-    <label>Final Exam Score</label>
-    <input type="number" id="final">
-
-    <label>Final Weight (%)</label>
-    <input type="number" id="final_w">
-
-    <button onclick="calculate()">Calculate GWA</button>
-
-    <div class="result" id="output"></div>
+<div class="result" id="output"></div>
 </div>
 
 <script>
-function calculate() {
-    let fa = Number(document.getElementById("fa").value) || 0;
-    let fa_w = Number(document.getElementById("fa_w").value) || 0;
+let subjects = [];
 
-    let aa = Number(document.getElementById("aa").value) || 0;
-    let aa_w = Number(document.getElementById("aa_w").value) || 0;
+function addSubject() {
+    let index = subjects.length;
 
-    let lt = Number(document.getElementById("lt").value) || 0;
-    let lt_w = Number(document.getElementById("lt_w").value) || 0;
+    let div = document.createElement("div");
+    div.className = "subject";
 
-    let final = Number(document.getElementById("final").value) || 0;
-    let final_w = Number(document.getElementById("final_w").value) || 0;
+    div.innerHTML = `
+        <h3>Subject ${index + 1}</h3>
+        <input placeholder="Subject Name" id="name_${index}">
 
-    let total_weight = fa_w + aa_w + lt_w + final_w;
+        <label>Formative Avg</label>
+        <input type="number" id="fa_${index}">
+        <label>Weight</label>
+        <input type="number" id="fa_w_${index}">
 
-    if (total_weight === 0) {
-        document.getElementById("output").innerHTML = "Please enter weights.";
-        return;
-    }
+        <label>Alternative Avg</label>
+        <input type="number" id="aa_${index}">
+        <label>Weight</label>
+        <input type="number" id="aa_w_${index}">
+
+        <label>Long Test Avg</label>
+        <input type="number" id="lt_${index}">
+        <label>Weight</label>
+        <input type="number" id="lt_w_${index}">
+
+        <label>Final Exam</label>
+        <input type="number" id="final_${index}">
+        <label>Weight</label>
+        <input type="number" id="final_w_${index}">
+    `;
+
+    document.getElementById("subjects").appendChild(div);
+    subjects.push(index);
+}
+
+function calcSubject(i) {
+    let fa = Number(document.getElementById(`fa_${i}`).value) || 0;
+    let fa_w = Number(document.getElementById(`fa_w_${i}`).value) || 0;
+
+    let aa = Number(document.getElementById(`aa_${i}`).value) || 0;
+    let aa_w = Number(document.getElementById(`aa_w_${i}`).value) || 0;
+
+    let lt = Number(document.getElementById(`lt_${i}`).value) || 0;
+    let lt_w = Number(document.getElementById(`lt_w_${i}`).value) || 0;
+
+    let final = Number(document.getElementById(`final_${i}`).value) || 0;
+    let final_w = Number(document.getElementById(`final_w_${i}`).value) || 0;
 
     let gwa =
         (fa * (fa_w / 100)) +
@@ -109,10 +134,73 @@ function calculate() {
         (lt * (lt_w / 100)) +
         (final * (final_w / 100));
 
-    let status = gwa >= 60 ? "PASSED ✅" : "FAILED ❌";
+    return gwa;
+}
 
-    document.getElementById("output").innerHTML =
-        "GWA: " + gwa.toFixed(2) + "%<br>Status: " + status;
+function convertGWA(gwa) {
+    if (gwa >= 96) return "1.00";
+    if (gwa >= 90) return "1.25";
+    if (gwa >= 84) return "1.50";
+    if (gwa >= 78) return "1.75";
+    if (gwa >= 72) return "2.00";
+    if (gwa >= 66) return "2.25";
+    if (gwa >= 60) return "2.50";
+    if (gwa >= 55) return "2.75";
+    return "3.00 or below";
+}
+
+function calculateAll() {
+    if (subjects.length === 0) {
+        alert("Add at least one subject.");
+        return;
+    }
+
+    let total = 0;
+    let subjectData = [];
+
+    subjects.forEach(i => {
+        let gwa = calcSubject(i);
+        total += gwa;
+
+        let name = document.getElementById(`name_${i}`).value || "Subject";
+
+        subjectData.push({name, gwa});
+    });
+
+    let overall = total / subjects.length;
+
+    let result = `
+        <b>Overall GWA:</b> ${overall.toFixed(2)}%<br>
+        <b>Equivalent:</b> ${convertGWA(overall)}<br><br>
+        <b>Subjects:</b><br>
+    `;
+
+    subjectData.forEach(s => {
+        result += `${s.name}: ${s.gwa.toFixed(2)}%<br>`;
+    });
+
+    document.getElementById("output").innerHTML = result;
+
+    saveData(overall, subjectData);
+}
+
+function saveData(overall, subjects) {
+    let name = document.getElementById("name").value;
+    let id = document.getElementById("id").value;
+    let quarter = document.getElementById("quarter").value;
+
+    let data = JSON.parse(localStorage.getItem("gwa_data")) || {};
+
+    if (!data[id]) {
+        data[id] = { name: name, quarters: {} };
+    }
+
+    data[id].quarters[quarter] = {
+        overall: overall,
+        subjects: subjects
+    };
+
+    localStorage.setItem("gwa_data", JSON.stringify(data));
 }
 </script>
 
