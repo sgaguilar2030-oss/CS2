@@ -1,7 +1,5 @@
 ## DOCUMENTATION
 
-- Updated feature list (reflecting any additions or removals)
-
 ## Core Features
 Computes subject GWA percentage.
 Supports multiple subjects (1–15 subjects).
@@ -18,6 +16,17 @@ Supports multiple subjects (1–15 subjects).
   - Grade range (0–100)
   - Displays formatted GWA table based on the institutional grading scale.
   - Includes looping feature to recompute new GWA sets.
+    
+- Data Features:
+  - Saves grades using JSON
+  - Allows users to:
+  - Access grades from past quarters
+  - View saved grades across all quarters
+  
+- Includes:
+  - 1/3 and 2/3 carry-over GWA computation
+  - JSON corruption recovery system
+
 
 ## Additions / Revisions:
 - Implemented get_valid_number() for numeric validation.
@@ -28,8 +37,7 @@ Supports multiple subjects (1–15 subjects).
 
 ## Removed Features:
 - No features were removed from the original proposal.
-
-
+- New features were added from the original proposal
 
 ## Revised file/function structure
   
