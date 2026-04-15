@@ -40,10 +40,19 @@ def get_valid_grade(prompt):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
+def check_weight(total_contribution, total_weight, remaining_weight, subject_name):
+    if remaining_weight == 0:
+        gwa = (total_contribution / total_weight) * 100 if total_weight > 0 else 0
+        print("All weights have been assigned.")
+        print(f"\nYour GWA percentage for {subject_name} is: {gwa:.2f}%")
+        print("Status:", "PASSED ✅" if gwa >= 60 else "FAILED ❌")
+        return gwa
+    return None
+
 # -----------------------------
 # Assessment Calculations
 # -----------------------------
-def calculate_assessment(assessment_name, max_count):
+def calculate_assessment(assessment_name, max_count, remaining_weight):
     print(f"\n{assessment_name} assessments")
     count = get_valid_number(
         f"Enter how many {assessment_name.lower()} assessments you took: ", 0, max_count
@@ -51,8 +60,10 @@ def calculate_assessment(assessment_name, max_count):
     if count == 0:
         return 0, 0
     weight = get_valid_number(
-        f"Enter total weight of {assessment_name.lower()} assessments to your final GWA (%): ", 0, 100
-    )
+    f"Enter weight (remaining {remaining_weight}%): ",
+    0,
+    remaining_weight
+)
     total = 0
     for i in range(count):
         grade = get_valid_grade(
@@ -63,14 +74,18 @@ def calculate_assessment(assessment_name, max_count):
     contribution = average * (weight / 100)
     return contribution, weight
 
-def calculate_optional_exam(exam_name):
+def calculate_optional_exam(exam_name, remaining_weight):
     take_exam = get_valid_number(
         f"Did you take any {exam_name}? (1 = yes, 2 = no): ", 1, 2
     )
     if take_exam == 2:
         return 0, 0
     count = get_valid_number(f"How many {exam_name} did you take?: ", 1, 10)
-    weight = get_valid_number(f"Enter total weight of {exam_name} (%): ", 0, 100)
+    weight = get_valid_number(
+    f"Enter weight (remaining {remaining_weight}%): ",
+    0,
+    remaining_weight
+)
     total = 0
     for i in range(count):
         grade = get_valid_grade(f"Enter score for {exam_name} #{i+1}: ")
@@ -79,13 +94,17 @@ def calculate_optional_exam(exam_name):
     contribution = average * (weight / 100)
     return contribution, weight
 
-def calculate_exam(exam_name):
+def calculate_exam(exam_name, remaining_weight):
     take_exam = get_valid_number(
         f"Did you take a {exam_name} exam? (1 = yes, 2 = no): ", 1, 2
     )
     if take_exam == 2:
         return 0, 0
-    weight = get_valid_number(f"Enter weight of {exam_name} exam (%): ", 0, 100)
+    weight = get_valid_number(
+    f"Enter weight (remaining {remaining_weight}%): ",
+    0,
+    remaining_weight
+)
     score = get_valid_grade(f"Enter your score in the {exam_name} exam: ")
     contribution = score * (weight / 100)
     return contribution, weight
@@ -97,30 +116,67 @@ def calculate_subject_gwa(subject_name):
     print(f"\n--- Calculating {subject_name} ---")
     total_contribution = 0
     total_weight = 0
+    remaining_weight = 100
 
-    fa_contrib, fa_weight = calculate_assessment("Formative", 10)
+    fa_contrib, fa_weight = calculate_assessment("Formative", 10, remaining_weight)
+    remaining_weight -= fa_weight
+    
     total_contribution += fa_contrib
     total_weight += fa_weight
 
-    aa_contrib, aa_weight = calculate_assessment("Alternative", 7)
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
+
+    aa_contrib, aa_weight = calculate_assessment("Alternative", 7, remaining_weight)
+    remaining_weight -= aa_weight
+    
     total_contribution += aa_contrib
     total_weight += aa_weight
 
-    lt_contrib, lt_weight = calculate_optional_exam("Long Test")
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
+
+    lt_contrib, lt_weight = calculate_optional_exam("Long Test", remaining_weight)
+    remaining_weight -= lt_weight
+    
     total_contribution += lt_contrib
     total_weight += lt_weight
 
-    pr_contrib, pr_weight = calculate_optional_exam("Practical Exam")
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
+
+    pr_contrib, pr_weight = calculate_optional_exam("Practical Exam", remaining_weight)
+    remaining_weight -= pr_weight
+    
     total_contribution += pr_contrib
     total_weight += pr_weight
 
-    midterm_contrib, midterm_weight = calculate_optional_exam("Midterm")
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
+
+    midterm_contrib, midterm_weight = calculate_optional_exam("Midterm", remaining_weight)
+    remaining_weight -= midterm_weight
+    
     total_contribution += midterm_contrib
     total_weight += midterm_weight
 
-    final_contrib, final_weight = calculate_exam("Final")
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
+
+    final_contrib, final_weight = calculate_exam("Final", remaining_weight)
+    remaining_weight -= final_weight
+    
     total_contribution += final_contrib
     total_weight += final_weight
+
+    result = check_weight(total_contribution, total_weight, remaining_weight, subject_name)
+    if result is not None:
+        return result
 
     bonus = get_valid_grade("Enter bonus points for this subject (0 if none): ")
     bonus = min(bonus, 5)
