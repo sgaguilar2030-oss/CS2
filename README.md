@@ -37,7 +37,7 @@
 2. Go to https://onlinegdb.com  
 3. Select Python 3 as the language  
 4. Copy and paste the code into the editor  
-5. Click Run*
+5. Click Run
 6. Follow the on-screen instructions  
 
 ### NOTE: Option 2 may be laggy as our code is 700+ lines long.
